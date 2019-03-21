@@ -10,3 +10,7 @@ COPY ./LaravelTesto/ /var/www/html/LaravelTesto/
 
 RUN chown -R $USER:www-data /var/www/html/LaravelTesto/storage
 RUN chmod -R 775 /var/www/html/LaravelTesto/storage
+
+RUN docker-php-ext-install pdo pdo_mysql
+
+RUN a2enmod rewrite
